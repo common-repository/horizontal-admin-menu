@@ -1,0 +1,207 @@
+    /***********************
+    Modify the admin styles to create a horizontal admin menu
+    ***********************/
+
+    /***********************
+    * Format menu container and background
+    */
+
+    #adminmenuwrap {
+        width: 100%;
+        border: 0;
+        padding: 0;
+        border-bottom: solid 1px #DFDFDF;
+        display: block;
+    }
+
+    #adminmenu {
+        margin: 0 auto;
+        padding: 0;
+        display: block;
+        width: 100%;
+    }
+
+    /***********************
+    * Using inline-block is better than float left when using a background div and your height is unknown. This code
+    * gets around the whitespace issues with inline-block.
+    */
+
+    #adminmenuwrap, #adminmenu {
+        letter-spacing: -.30em;
+    }
+
+    #adminmenu li a {
+        letter-spacing: normal;
+    }
+
+    /***********************
+    * Hide unused menu components
+    */
+
+    #adminmenuback,
+    #adminmenu .wp-menu-toggle,
+    #adminmenushadow,
+    .wp-menu-separator,
+    .wp-menu-separator-last,
+    .wp-menu-arrow div,
+    #collapse-menu,
+    #adminshadow {
+        display: none;
+    }
+
+    /***********************
+    * Format top-level menus
+    */
+
+    #adminmenu li.menu-top, #adminmenu li.wp-menu-open {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 120px;
+        border:  1px solid #ECECEC;
+        border-width: 1px 1px 1px 1px;
+        border-color: #ECECEC;
+    }
+
+    #adminmenu .wp-menu-image {
+        display: inline-block;
+        float: none;
+    }
+
+    #adminmenu a.menu-top {
+        display: inline-block;
+        float: none;
+        min-width: 0;
+        width: 87px;
+        border: 0;
+        padding: 5px 0 5px 5px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    #adminmenu li.wp-first-item {
+        margin: 0;
+    }
+
+    .awaiting-mod, .update-plugins {
+        position: absolute;
+        right: 2px;
+        top: 0;
+    }
+
+    /* Change background when menu or submenu is selected */
+    #adminmenu li.wp-has-current-submenu, #adminmenu li.current {
+        border: solid 1px #777;
+        background-color: #777;
+    }
+
+    /* Top menu hover actions */
+    body.js #adminmenu li.wp-has-submenu:hover div.wp-submenu  {
+        display: block;
+    }
+
+    body.js #adminmenu li.menu-top:hover {
+        border: solid 1px #DFDFDF;
+    }
+
+    /* Has submenus */
+    body.js #adminmenu li.wp-has-submenu:hover {
+        border-top: solid 1px #DFDFDF;
+        border-right: solid 1px #DFDFDF;
+        border-bottom: solid 1px #ECECEC;
+        border-left: solid 1px #DFDFDF;
+    }
+
+    body.js #adminmenu li.wp-has-current-submenu:hover, body.js #adminmenu li.current:hover {
+        border: solid 1px #777;
+    }
+
+    /***********************
+    * Format drop-down menus
+    */
+
+    #adminmenu .wp-submenu ul {
+        position: absolute;
+        top: 0;
+        left: -1px;
+        margin: 0;
+        border: solid 1px #DFDFDF;
+        border-top: 0;
+        background-color: #ECECEC;
+    }
+
+    #adminmenu .wp-submenu ul a {
+        width: 90px;
+        padding-right: 20px;
+        padding-left: 10px;
+        line-height: 1.8em;
+    }
+
+    body.js #adminmenu .wp-submenu li.current {
+        background-color: transparent;
+        border: 0;
+    }
+
+    #adminmenu .wp-submenu ul li {
+        white-space: nowrap;
+    }
+
+    /* Shadow (CSS3) */
+    .wp-submenu ul {
+        z-index: 2;
+        -moz-box-shadow: 0 3px 2px -2px rgba(0,0,0,0.2);
+        -webkit-box-shadow: 0 3px 2px -2px rgba(0,0,0,0.2);
+        box-shadow: 0 3px 2px -2px rgba(0,0,0,0.2);
+    }
+
+    /* Rounded bottom corners (CSS3) */
+    .wp-submenu li:last-child {
+        -moz-border-radius: 0 0 3px 3px;
+        -webkit-border-bottom-right-radius: 3px;
+        -webkit-border-bottom-left-radius: 3px;
+        -khtml-border-bottom-right-radius: 3px;
+        -khtml-border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+
+    /* Submenu hover actions */
+    body.js #adminmenu li.wp-has-submenu div.wp-submenu ul:hover li  {
+        display: block;
+    }
+
+    /* Hide submenu that gets auto-opened on page load */
+    body.js #adminmenu li.wp-menu-open .wp-submenu {
+        display: none;
+    }
+
+    /* Move user-info menu behind the drop-down menu */
+    #user_info {
+        z-index: 1;
+    }
+
+    /***********************
+    * Center and pad content below menus
+    */
+
+    #wpcontent {
+        clear: both;
+        margin: 0 20px;
+    }
+
+    #wphead {
+        margin: 0;
+    }
+
+    body.admin-bar #wphead {
+        padding-top: 0;
+    }
+
+    .wrap {
+        margin: 0;
+    }
+
+    #footer {
+        margin: 0 20px;
+    }
+

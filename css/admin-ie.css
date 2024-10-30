@@ -1,0 +1,14 @@
+/*
+IE 7 and below Only
+*/
+
+.on-top { 
+    z-index: 10000; /* works hand-in-hand with z-index workaround jQuery function */
+}
+
+#adminmenu li.menu-top {
+    display: block; /* ie7 + inline-block = sad face */
+    float: left;
+}
+
+
